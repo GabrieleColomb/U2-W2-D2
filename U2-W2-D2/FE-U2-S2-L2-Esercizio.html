@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agenzia viaggi</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <!-- Abbiamo bisogno di un sito web per un'agenzia di viaggi!
+
+In questa pagina aggiungerai destinazioni di posti che sogni di visitare in futuro.
+
+Il progetto non richiede alcuna customizzazione di CSS, dovrai crearlo interamente usando le classi di bootstrap, sia per quello che riguarda il layout che lo stile.
+
+
+Testa frequentemente il tuo lavoro nelle 3 principali risoluzioni (mobile, tablet, desktop) usando i developer tools del browser nella sezione emulazione device, per una maggiore precisione.
+
+Inizia utilizzando i componenti esistenti di Bootstrap 5 per creare la tua pagina (modificali all'occorrenza utilizzando le utility classes di bootstrap: colori, spazi, margini, dimensioni etc...)
+Usa container > row > col-* in questo ordine per ottenere un layout responsive perfetto.
+
+Esercizi:
+
+1) Implementa una navbar con questi elementi di menu:
+Home
+Saldi
+Welcome Summer
+Last Minute
+Recensioni
+
+Collegherai ogni sezione della pagina agli elementi del menu corrispondenti. 
+
+2) Aggiungi un logo alla navbar, un qualsiasi logo di agenzia di viaggi, anche inventata.
+
+3) Aggiungi una sezione introduttiva con il nome, il payoff dell'agenzia, 
+una breve descrizione in corsivo e una call-to-action (bottone) "Prenota ora" di colore azzurro chiaro e testo bianco e grassetto
+
+Il background della sezione sarà grigio chiaro e con bordi arrotondati e del padding generoso all'interno
+
+4) Implementa la sezione "Saldi". Qui mostrerai 4 destinazioni.
+
+In questa sezione dovranno esserci:
+
+4 card per destinazioni per linea a schermo grande - desktop (quattro sulla stessa linea)
+3 card per destinazioni per linea a schermo medio  - tablet  (una dovrà scomparire)
+2 card per destinazioni per linea a schermo piccolo - mobile (due per linea)
+
+le card avranno un bordo di 2px azzurro chiaro, il bottone azzurro chiaro e testo default
+
+5) Implementa la sezione "Welcome Summer". Qui mostrerai 6 destinazioni al tuo utente. (nessun bordo, ma stesso stile dei bottoni precedenti)
+
+In questa sezione dovranno esserci:
+
+6 card per destinazioni per linea a schermo extra large
+3 card per destinazioni per linea a schermo grande (desktop)
+2 card per destinazioni per linea a schermo medio (tablet)
+2 card per destinazioni per linea a schermo piccolo (mobile)
+
+6) Implementa la sezione "Offerta del giorno". Qui avrai:
+
+66% dello spazio dedicato all'immagine del luogo di destinazione
+33% dedicato al nome, date, prezzo e un badge con "best offer" come testo
+
+l'immagine avrà i bordi arrotondati e un'ombra leggera
+per il contenuto: il nome dovrà essere più grande del resto,
+le date dovranno essere formattate con font "monospace",
+il prezzo dovrà essere definito come "lead"
+e il badge sarà scuro
+
+
+7) Rendi invisibile la sezione "Offerta del giorno" su schermi piccoli.
+
+8) Aggiungi nella sezione "Welcome Summer" un'ombra grande ad ogni card.
+
+9) Crea una sezione "Last Minute", in cui mostrerai 6 immagini delle destinazioni last minute come rettangoli ombreggiati dai bordi arrotondati, senza testo. Rendile responsive come preferisci!
+
+10) Crea una sezione "Recensioni", dove l'utente potrà trovare alcuni feedback da utenti fittizi. 
+Piccola immagine tonda a sinistra con bordo 2px azzurro, nome utente e recensione a destra
+
+11) Crea un footer con le informazioni dell'agenzia e un bottone "Contattaci".
+
+
+
+EXTRAS
+
+12) Crea un bottone vicino ad ogni sezione per collassarla e riaprirla se premuto.
+
+13) Crea la possibilità di contare il numero di "viaggi" presenti sulla pagina e visualizzare il risultato in un alert.
+
+14) Crea un modale con un campo email e un messaggio.
+
+15) Quando l'utente cliccherà su "Contattaci", il modale dovrà essere visualizzato.
+
+16) Crea una funzione che aggiunga un badge con la scritta "HOT" su ognuna delle offerte "Welcome Summer" posizionato in alto a destra.
+
+17) Crea una funzione che rimuova tutte le "card" dalla pagina
+
+-->
+  </head>
+  <body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid container-lg w-80">
+          <nav class="navbar bg-body-tertiary">
+              <div class="container">
+                <a class="navbar-brand" href="#">
+                <img src="Assets/logo.png" alt="Viaggit" width="55" height="55">
+                </a>
+              </nav>  
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Saldi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Welcome Summer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Last minute</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="#">Recensioni</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Cerca posti da sogno"
+                aria-label="Search"
+              />
+            </form>
+            <button class="btn btn-outline-info text-black">Cerca</button>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <!--FINE NAVBAR-->
+
+    <!--INTRO-->
+    <div class="container px-4">
+        <section class="intro-section bg-light rounded p-5 m-5">
+          <h1 class="intro-title display-4 text-secondary">Viaggit - <span class="intro-payoff fs-6 align-middle">Ai confini del mondo</span></h1>
+          <hr class="intro-line">
+          <p class="intro-text fs-3 text-secondary"><em>Scopri le destinazioni perfette per te!</em></p>
+          <a class="btn btn-info btn-lg text-light mt-5 px-5" href="https://www.youtube.com/watch?v=ecRcT6TPuCs&list=PL9VxJePfK1K5DY2-Aa-wj7kJCIrGB4GI4" role="button">Prenota ora</a>
+        </section>
+      </div>
+    <!--FINE INTRO-->
+
+    <!--SALDI--> 
+    <section class="saldi-section">
+        <div class="container">
+          <h2 class="section-title">Saldi</h2>
+          <div class="row">
+            <div class="col-md-3 mb-4">
+              <div class="card border-info" style="width: 18rem;">
+                <img src="Assets/Bahamas.jpg" class="card-img-top" alt="Bahamas">
+                <div class="card-body">
+                  <h5 class="card-title">Bahamas</h5>
+                  <p class="card-text">White Cay è una striscia di sabbia bianca mozzafiato nelle Bahamas, con acque turchesi e incontaminate. Questo paradiso caraibico incanta i visitatori con la sua bellezza e offre un'esperienza unica..</p>
+                  <a href="#" class="btn btn-info">Prenota</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="card border-info" style="width: 18rem;">
+                <img src="Assets/Tortuga.webp" class="card-img-top" alt="Tortuga">
+                <div class="card-body">
+                  <h5 class="card-title">Tortuga</h5>
+                  <p class="card-text">La Isla Tortuga, è la tipica isola tropicale con spiaggia di sabbia bianca, palme frondose e ombreggianti e fondali da sogno per fare snorkeling in acque cristalline.</p>
+                  <a href="#" class="btn btn-info">Prenota</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="card border-info" style="width: 18rem;">
+                <img src="Assets/Singapore.jpg" class="card-img-top" alt="Singapore">
+                <div class="card-body">
+                  <h5 class="card-title">Singapore</h5>
+                  <p class="card-text">Città-Stato asiatica, uno dei luoghi più interessanti e sorprendenti da scoprire. E, insieme a grandi aree verdi e riserve naturali, ne fanno anche un esempio di città sostenibile e all’avanguardia.</p>
+                  <a href="#" class="btn btn-info">Prenota</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="card border-info" style="width: 18rem;">
+                <img src="Assets/Samana.jpg" class="card-img-top" alt="Samana">
+                <div class="card-body">
+                  <h5 class="card-title">Samaná</h5>
+                  <p class="card-text">Diversi luoghi, vengono definiti “paradiso terrestre”. Però nessuno di essi ha il diritto di fregiarsi di questo titolo quanto Samaná, selvaggia penisola adagiata sulla costa nord di Santo Domingo.</p>
+                  <a href="#" class="btn btn-info">Prenota</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<!--FINE SALDI-->
+
+<!--WELCOME SUMMER-->
+<br>
+<section class="welcome-summer-section">
+    <div class="container">
+      <h2 class="section-title">Welcome summer</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card position-relative rounded" style="width: 25rem;">
+              <div class="hot-container position-absolute top-0 end-0 bg-danger text-white rounded p-1 m-2">
+                <span class="hot-text">HOT</span>
+              </div>
+              <img src="Assets/Zanzibar.jpg" class="card-img-top" alt="Zanzibar">
+              <div class="card-body">
+                <h5 class="card-title">Zanzibar, Tanzania</h5>
+                <p class="card-text">Le spiagge di Zanzibar offrono un mare calmo al mattino e acque leggermente agitate nel pomeriggio, permettendo di nuotare con i delfini e scoprire il Colobo Rosso nella Foresta di Jozani.</p>
+                <a href="#" class="btn btn-info">Prenota</a>
+              </div>
+            </div>
+          </div>
+<div class="col-md-4 mb-4">
+    <div class="card shadow" style="width: 25rem;">
+        <div class="hot-container position-absolute top-0 end-0 bg-danger text-white rounded p-1 m-2">
+            <span class="hot-text">HOT</span>
+          </div>
+    <img src="Assets/Santorini.jpg" class="card-img-top" alt="Santorini">
+    <div class="card-body">
+      <h5 class="card-title">Santorini, Grecia</h5>
+      <p class="card-text">Santorini permetterà di godere della movida e del clima caldo e soleggiato. Ideale per ogni tipo di turista: dalla coppia in cerca di luoghi romantici, ai giovani, in cerca di divertimento.</p>
+      <a href="#" class="btn btn-info">Prenota</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card shadow" style="width: 25rem;">
+        <div class="hot-container position-absolute top-0 end-0 bg-danger text-white rounded p-1 m-2">
+            <span class="hot-text">HOT</span>
+          </div>
+    <img src="Assets/Maiorca.jpg" class="card-img-top" alt="Maiorca">
+    <div class="card-body">
+      <h5 class="card-title">Maiorca, Spagna</h5>
+      <p class="card-text">Maiorca è la più grande delle isole Baleari, nel sud-est della Spagna: agosto è la sua stagione, di giorno il clima soleggiato permette di godersi appieno lo splendido mare e le spiagge.</p>
+      <a href="#" class="btn btn-info">Prenota</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card shadow" style="width: 25rem;">
+        <div class="hot-container position-absolute top-0 end-0 bg-danger text-white rounded p-1 m-2">
+            <span class="hot-text">HOT</span>
+          </div>
+      <img src="Assets/Norvegia.jpg" class="card-img-top" alt="Norvegia">
+      <div class="card-body">
+        <h5 class="card-title">Norvegia</h5>
+        <p class="card-text">La Norvegia, meta per gli amanti della natura e del trekking, offre la possibilità di una vacanza da sogno tra panorami unici nel loro genere con vedute e prospettive mozzafiato.</p>
+        <a href="#" class="btn btn-info">Prenota</a>
+      </div>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <div class="card shadow" style="width: 25rem;">
+        <div class="hot-container position-absolute top-0 end-0 bg-danger text-white rounded p-1 m-2">
+            <span class="hot-text">HOT</span>
+          </div>
+      <img src="Assets/Croazia.jpg" class="card-img-top" alt="Croazia">
+      <div class="card-body">
+        <h5 class="card-title">Croazia</h5>
+        <p class="card-text">La costa croata offre una varietà di spiagge che soddisfano ogni desiderio. Tra le gemme selvagge e naturali si trovano Punta Rata, Lubenice e l'isola disabitata di Saplun, paradisi da non perdere!</p>
+        <a href="#" class="btn btn-info">Prenota</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-4">
+    <div class="card shadow" style="width: 25rem;">
+        <div class="hot-container position-absolute top-0 end-0 bg-danger text-white rounded p-1 m-2">
+            <span class="hot-text">HOT</span>
+          </div>
+      <img src="Assets/Bali.webp" class="card-img-top" alt="Bali">
+      <div class="card-body">
+        <h5 class="card-title">Bali, Indonesia</h5>
+        <p class="card-text">Bali è un'isola paradisiaca nell'arcipelago delle Isole della Sonda, celebre per la sua bellezza. Offre una varietà di esperienze, combinando vacanze balneari con avventure, cultura e divertimento.</p>
+        <a href="#" class="btn btn-info">Prenota</a>
+      </div>
+    </div>
+  </div>
+  </div>
+<!--FINE WELCOME SUMMER-->
+
+<!--OFFERTA DEL GIORNO-->
+<section class="welcome-summer-section">
+    <div class="container">
+      <h2 class="section-title">Offerta del giorno</h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="Assets/SriLanka1.jpg" class="d-block w-100" alt="Sri Lanka">
+              </div>
+              <div class="carousel-item">
+                <img src="Assets/Colombo.jpg" class="d-block w-100" alt="Colombo">
+              </div>
+              <div class="carousel-item">
+                <img src="Assets/Mirissa.jpg" class="d-block w-100" alt="Mirissa">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div>
+            <h4 class="fw-bold fs-4">Sri Lanka</h4>
+            <p class="text-muted fs-6">15.01.2024 - 31.01.2021</p>
+            <p class="fs-5">Viaggi a partire da 800 €</p>
+            <a href="#" class="btn btn-dark btn-sm fs-6">Prenota</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!--FINE OFFERTA DEL GIORNO-->
+<!--LAST MINUTE-->
+<div class="row mt-4">
+    <div class="col">
+      <h3 id="last-minute">Last Minute</h3>
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6">
+        <div class="col">
+          <a href="#">
+            <img src="Assets/1.jpg" class="img-fluid rounded shadow" alt="" />
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <img src="Assets/2.jpg" class="img-fluid rounded shadow" alt="" />
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <img src="Assets/3.jpg" class="img-fluid rounded shadow" alt="" />
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <img src="Assets/4.jpg" class="img-fluid rounded shadow" alt="" />
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <img src="Assets/5.jpg" class="img-fluid rounded shadow" alt="" />
+          </a>
+        </div>
+        <div class="col">
+          <a href="#">
+            <img src="Assets/6.jpg" class="img-fluid rounded shadow" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--FINE LAST MINUTE-->
+<!--RECENSIONI -->
+<div class="row">
+    <div class="col mt-5 d-flex justify-content-center">
+      <h3 id="review">Dicono di noi</h3>
+    </div>
+    <div class="row align-items-start">
+      <div class="col-1 me-4">
+        <img
+        src="Assets/Profilo3.jpg"
+          class="rounded-circle shadow-1-strong border border-2 border-info"
+          width="80"
+          height="80"
+        />
+      </div>
+      <div class="col mb-3">
+        <p>Vista Fly</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Consectetur modi quis velit laudantium, totam inventore, quos
+          natus aperiam illum, quidem eligendi nihil. Impedit nesciunt
+          dignissimos laborum provident, nostrum nulla. Illum. Lorem ipsum
+          dolor sit amet, consectetur adipisicing elit. Voluptate aliquid
+          quas quo dolorem totam corporis saepe amet eligendi, optio
+          blanditiis ipsum cupiditate aut similique ipsam, nisi neque
+          dolor sit aspernatur!
+        </p>
+      </div>
+    </div>
+    <div class="row align-items-start">
+      <div class="col-1 me-4">
+        <img
+        src="Assets/Profilo1.jpg"
+          class="rounded-circle shadow-1-strong border border-2 border-info"
+          width="80"
+          height="80"
+        />
+      </div>
+      <div class="col mb-3">
+        <p>Pinguino Travel</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Consectetur modi quis velit laudantium, totam inventore, quos
+          natus aperiam illum, quidem eligendi nihil. Impedit nesciunt
+          dignissimos laborum provident, nostrum nulla. Illum. Lorem ipsum
+          dolor sit amet, consectetur adipisicing elit. Voluptate aliquid
+          quas quo dolorem totam corporis saepe amet eligendi, optio
+          blanditiis ipsum cupiditate aut similique ipsam, nisi neque
+          dolor sit aspernatur!
+        </p>
+      </div>
+    </div>
+    <div class="row align-items-start">
+      <div class="col-1 me-4">
+        <img
+          src="Assets/Profilo2.jpg"
+          class="rounded-circle shadow-1-strong border border-2 border-info"
+          width="80"
+          height="80"
+        />
+      </div>
+      <div class="col mb-3">
+        <p>Sea Nautilus</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Consectetur modi quis velit laudantium, totam inventore, quos
+          natus aperiam illum, quidem eligendi nihil. Impedit nesciunt
+          dignissimos laborum provident, nostrum nulla. Illum. Lorem ipsum
+          dolor sit amet, consectetur adipisicing elit. Voluptate aliquid
+          quas quo dolorem totam corporis saepe amet eligendi, optio
+          blanditiis ipsum cupiditate aut similique ipsam, nisi neque
+          dolor sit aspernatur!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--FINE RECENSIONI -->
+<!--FOOTER-->
+<footer class="container-fluid mt-5 py-3" style="background-color: #17a2b8">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <a href="#" class="btn btn-info">Contattaci</a>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+          <p class="mb-0 text-dark">
+            © Ready for travel GFC, We wait for you! </p> 
+        </div>
+      </div>
+    </div>
+  </footer>
+<!--FINE FOOTER-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
